@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+ul{
+    list-style-type: none;
+}
+
+input{
+    width: 10%;
+    margin: 5px;
+}
+
+body{
+    background-color: #3AAFA9;
+}
+
+#logo{
+    font-family: 'Anton', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    background-color: #17252a;
+    flex-direction:row;
+    padding: 2%;
+    border-radius: 5px;
+    color:#ffffff;
+    align-items: center;
+    
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #2b7a78;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.area{
+    width: 10%;
+    height: 3rem;
+    background-color: #DEf2F1;
+    margin: 4px 4px 4px 4px;
+    padding: 3px;
+    border-radius: 2px;
+    opacity: 90%;
+    box-shadow: 1px 2px 2px #000000;
+}
+
+.area:hover{
+    opacity: 100%;
+    background-color: #ffffff;
+    
+}
+
+.btn{
+    background-color: #FFFFFF;
+    padding: 1%;
+    margin: auto;
+    margin-top: 2px;
+    display: inline;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #000000;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+#start{
+    background-color:rgb(230, 36, 36);
+    color: #eeeb28 ;
+}
+
+#notReady{
+    background-color: rgb(230, 36, 36);
+    color: #eeeb28 ;
+    opacity: 50%;
+    cursor: default;
+    
+}
+
+.options{
+    background-color: #17252a;
+    color: #eeeb28;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#bomba{
+    width: 3%;
+}

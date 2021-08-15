@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/index.css">
+        <script src = "../js/gerarCampo.js"></script>
+        <title>Campo Minado</title>
+    </head>
+    <body>
+        <div class = "navbar">
+            <img id = "bomba" src="../images/bombear.png" alt="bomba">
+            <div id = "logo">Campo Minado</div>     
+        </div>
+
+        <div class = "campo">
+            <form class = "options" action="dim">
+                <label for="linhas">Linhas</label>
+                <input type="number" id = "linhas" name="linhas">
+                <label for="colunas">Colunas</label>
+                <input type="number" id = "colunas" name="colunas">
+                <label for="bomb">Bombas</label>
+                <input type="number" id = "bomb" name="bomb">
+            </form>
+            <div class="btn" id="gerarCampo" onclick="gerarCampo()">Gerar Campo</div>
+            <table id = "table">
+            <!-- Tabela renderizada dinamicamente -->
+            </table>   
+            <div id = "notReady" class = "btn">
+                Iniciar Jogo
+            </div>
+        </div>
+        
+    </body>
+</html> 

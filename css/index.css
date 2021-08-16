@@ -47,9 +47,28 @@ body{
     border-radius: 2px;
     opacity: 90%;
     box-shadow: 1px 2px 2px #000000;
+   
+}
+
+.areaBomba{
+    width: 10%;
+    height: 3rem;
+    background-color: #DEf2F1;
+    margin: 4px 4px 4px 4px;
+    padding: 3px;
+    border-radius: 2px;
+    opacity: 90%;
+    box-shadow: 1px 2px 2px #000000;
+   
 }
 
 .area:hover{
+    opacity: 100%;
+    background-color: #ffffff;
+    
+}
+
+.areaBomba:hover{
     opacity: 100%;
     background-color: #ffffff;
     
@@ -96,5 +115,12 @@ body{
 }
 
 #bomba{
-    width: 3%;
+    width: 5%;
+}
+
+#bombaArea{
+    width: 30%;
+    margin: 0;
+   
+    
 }

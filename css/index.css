@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-ul{
-    list-style-type: none;
+tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;   
+}
+
+td {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
 }
 
 input{
@@ -39,7 +48,7 @@ body{
 }
 
 .area{
-    width: 10%;
+    
     height: 3rem;
     background-color: #DEf2F1;
     margin: 4px 4px 4px 4px;
@@ -50,8 +59,20 @@ body{
    
 }
 
+.areaRevel{
+    
+    height: 3rem;
+    background-color: #179b4a;
+    margin: 4px 4px 4px 4px;
+    padding: 3px;
+    border-radius: 2px;
+    opacity: 90%;
+    box-shadow: 1px 2px 2px #000000;
+   
+}
+
 .areaBomba{
-    width: 10%;
+    
     height: 3rem;
     background-color: #DEf2F1;
     margin: 4px 4px 4px 4px;
@@ -118,9 +139,12 @@ body{
     width: 5%;
 }
 
-#bombaArea{
-    width: 30%;
-    margin: 0;
+.bombaArea{
    
+    height:70%;
     
+}
+
+.bombaHide{
+    display: none;
 }

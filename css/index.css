@@ -148,3 +148,210 @@ body{
 .bombaHide{
     display: none;
 }
+
+.hidden {
+    display: none;
+}
+
+body.dark {
+    background-color: #3AAFA9;
+}
+
+body.light {
+    background-color: #FFFFFF;
+}
+
+body.dark header {
+    background-color: #17252a;
+}
+
+body.light header {
+    background-color: #2a9df4;
+}
+
+header {
+    display: flex;
+    flex-direction:row;
+    padding: 20px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+header div {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    width: 80%;
+}
+
+header div img.bomb {
+    width: 75px;
+}
+
+header div span.logo {
+    color:#ffffff;
+    font-family: 'Anton', sans-serif;
+}
+
+header div.div-change-theme {
+    width: 20%;
+    align-items: end;
+    display: flex;
+    align-content: end;
+    flex-direction: column;
+}
+
+header div.div-change-theme div.btn {
+    width: 20px;
+    text-align: end;
+    align-items: end;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    margin: 0;
+}
+
+
+body.dark header div.div-change-theme div.btn img {
+    filter: invert(93%) sepia(85%) saturate(833%) hue-rotate(346deg) brightness(106%) contrast(87%);
+}
+
+body.dark header div.div-change-theme div.btn:hover img {
+    filter: invert(100%) sepia(94%) saturate(23%) hue-rotate(45deg) brightness(107%) contrast(104%);
+}
+
+body.light header div.div-change-theme div.btn img {
+    filter: invert(10%) sepia(25%) saturate(4687%) hue-rotate(191deg) brightness(102%) contrast(98%);
+}
+
+body.light header div.div-change-theme div.btn:hover img {
+    filter: invert(81%) sepia(27%) saturate(116%) hue-rotate(133deg) brightness(109%) contrast(105%);
+}
+
+
+body.dark nav {
+    background-color: #17252a;
+}
+
+body.light nav {
+    background-color: #2a9df4;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-direction:row;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+nav .btn,
+nav .btn-selected,
+header .btn {
+    padding: 10px;
+    margin: auto;
+    display: inline;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+body.dark nav .btn,
+body.dark header .btn {
+    background-color:rgb(230, 36, 36);
+    box-shadow: 1px 2px 2px #000000;
+}
+
+body.light nav .btn,
+body.light header .btn {
+    background-color: #e0fbfc;
+    box-shadow: 1px 2px 2px #03254c;
+}
+
+body.dark nav .btn span,
+body.dark header .btn img {
+    color: #eeeb28 ;
+}
+
+body.light nav .btn span,
+body.light header .btn img {
+    color: #03254c ;
+}
+
+body.dark nav .btn:hover,
+body.dark nav .btn-selected,
+body.dark header .btn:hover {
+    background-color: #000000;
+    box-shadow: 1px 2px 2px #FFFFFF;
+}
+
+body.light nav .btn:hover,
+body.light nav .btn-selected,
+body.light header .btn:hover {
+    background-color: #03254c;
+    box-shadow: 1px 2px 2px #e0fbfc;
+}
+
+body.dark nav .btn:hover span,
+body.dark nav .btn-selected span  {
+    color: #FFFFFF ;
+}
+
+body.light nav .btn:hover span,
+body.light nav .btn-selected span {
+    color: #e0fbfc ;
+}
+
+nav .btn span,
+nav .btn-selected span {
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+body.dark section {
+    background-color: #2b7a78;
+    border: solid 2px #17252a;
+}
+
+body.light section {
+    background-color: #e0fbfc;
+    border: solid 2px #2a9df4;
+}
+
+section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction:row;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+body.dark footer {
+    background-color: #17252a;
+}
+
+body.light footer {
+    background-color: #2a9df4;
+}
+
+footer {
+    margin-top: 10px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 5px;
+    align-items: center;
+}
+
+body.dark footer p {
+    color:#ffffff;
+}
+
+body.light footer p {
+    color:#ffffff;
+}
+
+footer p {
+    font-size: 10px;
+    font-family: 'Anton', sans-serif;
+}

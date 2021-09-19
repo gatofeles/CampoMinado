@@ -36,6 +36,15 @@ body{
     align-items: center;
     
 }
+.navbarLgn{
+    display: flex;
+    background-color: #17252a;
+    flex-direction:column;
+    padding: 2%;
+    border-radius: 5px;
+    color:#ffffff;
+    align-items: center;
+}
 
 .campo{
     display: flex;
@@ -78,7 +87,7 @@ body{
     padding: 3px;
     border-radius: 2px;
     opacity: 90%;
-    box-shadow: 1px 2px 2px #000000;
+    box-shadow: 1px 2px 2px #665e5e;
    
 }
 
@@ -99,6 +108,18 @@ body{
     padding: 1%;
     margin: auto;
     margin-top: 2px;
+    display: inline;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #000000;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btnLgn{
+    background-color: rgb(230, 36, 36);;
+    padding: 1%;
+    margin: auto;
+    margin-bottom: 7px;
     display: inline;
     border-radius: 2px;
     box-shadow: 1px 2px 2px #000000;
@@ -149,6 +170,43 @@ body{
     display: none;
 }
 
+.login{
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #17252a;
+    box-shadow: 2px 5px 5px #000000;
+    color: #eeeb28;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#email_password{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+.loginForm{
+    background-color: #17252a;
+    color: #eeeb28;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+
+=======
 .dropbtn{
     background-color:  rgb(230, 36, 36);
     padding: 10%;
@@ -203,3 +261,4 @@ body{
 .dropdown-content {
     right: 0;
 }
+

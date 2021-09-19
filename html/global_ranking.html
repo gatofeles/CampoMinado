@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/global-ranking.css">
+        <script src = "../js/nav.js"></script>
+        <script src = "../js/header.js"></script>
+        <script src = "../js/global-ranking.js"></script>
+        <title>Campo Minado - Ranking Global</title>
+    </head>
+    <body onload="defineTheme(); loadGlobalRanking();">
+        <header>
+            <div>
+                <img class="bomb" src="../images/bombear.png" alt="bomba" />
+                <span class="logo">Campo Minado</span>
+            </div> 
+            <div class="div-change-theme">
+                <div class="btn" onclick="changeTheme()">
+                    <img class="change-theme" src="../images/theme_light_dark_icon.svg" alt="Trocar o Theme" />
+                </div>
+            </div>     
+        </header>
+
+        <nav id="navLogged">
+            <div class="btn" onclick="goGame()">
+                <span>Jogo</span>
+            </div>
+            <div class="btn-selected" onclick="goGlobalRanking()">
+                <span>Ranking Global</span>
+            </div>
+            <div class="btn" onclick="goRegister()">
+                <span>Alterar Dados</span>
+            </div>
+            <div class="btn" onclick="logout()">
+                <span>Sair</span>
+            </div>
+        </nav>
+
+        <nav id="navLoggedOut" class="hidden">
+            <div class="btn start" onclick="goRegister()">
+                <span>Cadastrar</span>
+            </div>
+            <div class="btn start" onclick="logout()">
+                <span>Entrar</span>
+            </div>
+        </nav>
+
+        <section>
+            <h1>Ranking Global</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Dimensões do Campo</th>
+                        <th>Tempo de Jogo (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking">
+                </tbody>
+            </table>
+        </section>
+        
+        <footer>
+            <p>SI401 @2021</p>
+        </footer>
+    </body>
+</html> 

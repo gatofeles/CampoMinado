@@ -37,6 +37,15 @@ body{
     align-items: center;
     
 }
+.navbarLgn{
+    display: flex;
+    background-color: #17252a;
+    flex-direction:column;
+    padding: 2%;
+    border-radius: 5px;
+    color:#ffffff;
+    align-items: center;
+}
 
 .campo{
     display: flex;
@@ -111,7 +120,7 @@ body{
     background-color: rgb(230, 36, 36);;
     padding: 1%;
     margin: auto;
-    margin-top: 2px;
+    margin-bottom: 7px;
     display: inline;
     border-radius: 2px;
     box-shadow: 1px 2px 2px #000000;
@@ -187,6 +196,7 @@ body{
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 #email_password{

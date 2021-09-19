@@ -12,6 +12,15 @@
         <div class = "navbar">
             <img id = "bomba" src="../images/bombear.png" alt="bomba">
             <div id = "logo">Campo Minado</div>     
+                <div class="dropdown">
+                    <div class="dropbtn">Menu</div>
+                        <div class="dropdown-content">
+                        <a href="#">Resultados Anteriores </a>
+                        <a href="#">Ranking Geral</a>
+                        <a href="#">Sair da Partida </a>
+                        <a href="login.html">Logout</a>
+                        </div>
+                </div>
         </div>
 
         <div class = "campo">
@@ -25,12 +34,11 @@
             </form>
             <div class="btn" id="gerarCampo" onclick="gerarCampo()">Gerar Campo</div>
             <table id = "table">
-            <!-- Tabela renderizada dinamicamente -->
+                <!-- Tabela renderizada dinamicamente -->
             </table>   
             <div id = "notReady" class = "btn">
                 Iniciar Jogo
             </div>
         </div>
-        
     </body>
 </html> 

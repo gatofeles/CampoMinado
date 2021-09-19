@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+a{
+    text-decoration: none;
+      color: inherit;
+      
+}
+
 tr {
     width: 100%;
     display: table;
@@ -30,12 +36,20 @@ body{
 .navbar{
     display: flex;
     background-color: #17252a;
-    flex-direction:row;
     padding: 2%;
     border-radius: 5px;
     color:#ffffff;
     align-items: center;
     
+}
+.navbarLgn{
+    display: flex;
+    background-color: #17252a;
+    flex-direction:column;
+    padding: 2%;
+    border-radius: 5px;
+    color:#ffffff;
+    align-items: center;
 }
 
 .campo{
@@ -79,7 +93,7 @@ body{
     padding: 3px;
     border-radius: 2px;
     opacity: 90%;
-    box-shadow: 1px 2px 2px #000000;
+    box-shadow: 1px 2px 2px #665e5e;
    
 }
 
@@ -100,6 +114,18 @@ body{
     padding: 1%;
     margin: auto;
     margin-top: 2px;
+    display: inline;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #000000;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btnLgn{
+    background-color: rgb(230, 36, 36);;
+    padding: 1%;
+    margin: auto;
+    margin-bottom: 7px;
     display: inline;
     border-radius: 2px;
     box-shadow: 1px 2px 2px #000000;
@@ -133,6 +159,7 @@ body{
     border-radius: 5px;
     font-size: 10px;
     font-family: 'Press Start 2P', cursive;
+    
 }
 
 #bomba{
@@ -354,4 +381,109 @@ body.light footer p {
 footer p {
     font-size: 10px;
     font-family: 'Anton', sans-serif;
+
+.login{
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #17252a;
+    box-shadow: 2px 5px 5px #000000;
+    color: #eeeb28;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#email_password{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+.loginForm{
+    background-color: #17252a;
+    color: #eeeb28;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.dropbtn{
+    background-color:  rgb(230, 36, 36);
+    padding: 10%;
+    margin: auto;
+    margin-top: 2px;
+    display: inline;
+    width: 5%;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #000000;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+    
+}
+.dropdown{
+    position:relative;
+    display: inline-block;
+    margin-left: auto;
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(230, 36, 36);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(230, 36, 3, 0.226);
+    border-radius: 5px;
+    z-index: 1;
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    opacity: 90%;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;  
+    opacity: 100%;
+    
+}  
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #3b5e6b;
+}
+.dropdown-content {
+    right: 0;
+}
+
+.cadastroForm{
+    background-color: #17252a;
+    color: #eeeb28;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10px;
+
 }

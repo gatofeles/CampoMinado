@@ -30,7 +30,6 @@ body{
 .navbar{
     display: flex;
     background-color: #17252a;
-    flex-direction:column;
     padding: 2%;
     border-radius: 5px;
     color:#ffffff;

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+
 a{
     text-decoration: none;
       color: inherit;
@@ -253,7 +254,7 @@ body.light .login{
     color: #03254c;
 }
 
-#email_password{
+.email_password{
     font-family: 'Press Start 2P', cursive;
     font-size: 15px;
 }
@@ -613,10 +614,29 @@ body.light section {
     border: solid 2px #2a9df4;
 }
 
+section.registroForm{
+    margin-top: 10px;
+    display: flex;
+    flex-direction:column;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+
 section {
     margin-top: 10px;
     display: flex;
     flex-direction:row;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+section.cadastroForm{
+    margin-top: 10px;
+    display: flex;
+    flex-direction:column;
     padding: 10px;
     border-radius: 5px;
     align-items: center;

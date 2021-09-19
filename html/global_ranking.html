@@ -5,12 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../css/game.css">
+        <link rel="stylesheet" href="../css/global-ranking.css">
+        <script src = "../js/nav.js"></script>
         <script src = "../js/header.js"></script>
-        <script src = "../js/gerarCampo.js"></script>
-        <title>Campo Minado</title>
+        <script src = "../js/global-ranking.js"></script>
+        <title>Campo Minado - Ranking Global</title>
     </head>
-    <body onload="loadGamePage()">
+    <body onload="loadRankingPage()">
         <header>
             <div>
                 <img class="bomb" src="../images/bombear.png" alt="bomba" />
@@ -25,55 +26,28 @@
                 <div class="dropbtn">Menu</div>
                 <div class="dropdown-content">
                     <a href="profile.html">Dados do Usuário</a>
-                    <a href="global_ranking.html">Global Ranking</a>
+                    <a href="game.html">Jogo</a>
                     <a href="login.html">Logout</a>
                 </div>
             </div>   
         </header>
 
-        <section class="campo">
-            <form class = "options" action="dim">
-                <label for="linhas">Linhas</label>
-                <input type="number"  id = "linhas" name="linhas">
-                <label for="colunas">Colunas</label>
-                <input type="number"  id = "colunas" name="colunas">
-                <label for="bomb">Bombas</label>
-                <input type="number"  id = "bomb" name="bomb">
-                <label for="model">Modalidade</label>
-                <select name="model">
-                  <option value="classic">Clássica</option>
-                  <option value="rivotril">Rivotril</option>
-                </select>
-            </form>
-            <div class="btn" id="gerarCampo" onclick="gerarCampo()">Gerar Campo</div>
-            <table id = "table">
-                <!-- Tabela renderizada dinamicamente -->
-            </table>   
-            <div id = "notReady" class = "btn notReady">
-                Iniciar Jogo
-            </div>
-        </section>
-        
-        <article>
-            <h1>Histórico</h1>
+        <section>
+            <h1>Ranking Global</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Username</th>
                         <th>Dimensões do Campo</th>
-                        <th>Nº Bombas</th>
-                        <th>Modalidade</th>
                         <th>Tempo de Jogo (s)</th>
-                        <th>Resultado</th>
-                        <th>Data do Jogo</th>
                     </tr>
                 </thead>
                 <tbody id="ranking">
                     <!-- Tabela renderizada dinamicamente -->
                 </tbody>
             </table>
-        </article>
-
+        </section>
+        
         <footer>
             <p>SI401 @ 2021</p>
         </footer>

@@ -139,3 +139,152 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+function loadGamePage() {
+    defineTheme(); 
+    loadHist();
+}
+
+function loadHist(){
+    
+    const ranking = mockHist();
+
+    const tableRanking = document.getElementById("ranking");
+
+    tableRanking.innerHTML = '';
+
+    for(let i = 0; i< ranking.length; i++){
+
+        const newRanking = document.createElement("tr");
+
+        for(let j = 0; j < 7; j++){
+            const newField = document.createElement("td");
+
+            const label = document.createElement("span");
+
+            let value = '';
+
+            switch (j){
+                case 0:
+                    value = ranking[i].username;
+                    break;
+                case 1:
+                    value = ranking[i].dimension;
+                    break;
+                case 2:
+                    value = ranking[i].bombs;
+                    break;
+                case 3:
+                    value = ranking[i].model;
+                    break;
+                case 4:
+                    value = ranking[i].time;
+                    break;
+                case 5:
+                    value = ranking[i].result;
+                    break;
+                case 6:
+                    value = ranking[i].date;
+                    break;
+            }
+            label.innerHTML = value;
+
+            newField.appendChild(label);
+            newRanking.appendChild(newField);
+        }
+        tableRanking.appendChild(newRanking);
+    }
+
+}
+
+function mockHist(){
+    return [{
+        username: 'Jogador 1',
+        dimension: '10x10',
+        bombs: 12,
+        model: 'Clássica',
+        time: 600,
+        result: 'Venceu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '10x10',
+        bombs: 12,
+        model: 'Clássica',
+        time: 800,
+        result: 'Perdeu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '9x9',
+        bombs: 10,
+        model: 'Rivotril',
+        time: 400,
+        result: 'Venceu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '9x9',
+        bombs: 10,
+        model: 'Clássica',
+        time: 500,
+        result: 'Venceu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '9x9',
+        bombs: 12,
+        model: 'Rivotril',
+        time: 650,
+        result: 'Perdeu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '9x9',
+        bombs: 9,
+        model: 'Clássica',
+        time: 1000,
+        result: 'Venceu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '8x8',
+        bombs: 8,
+        model: 'Clássica',
+        time: 655,
+        result: 'Venceu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '8x8',
+        bombs: 8,
+        model: 'Clássica',
+        time: 777,
+        result: 'Perdeu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '8x8',
+        bombs: 8,
+        model: 'Rivotril',
+        time: 987,
+        result: 'Perdeu',
+        date: '17/09/2021'
+    },
+    {
+        username: 'Jogador 1',
+        dimension: '7x7',
+        bombs: 9,
+        model: 'Rivotril',
+        time: 400,
+        result: 'Venceu',
+        date: '17/09/2021'
+    }]
+}

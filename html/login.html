@@ -5,16 +5,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/index.css">
+        <script src = "../js/header.js"></script>
         <script src = "../js/gerarCampo.js"></script>
         <title>Campo Minado</title>
     </head>
-    <body>
-        <div class = "navbarLgn">
-            <img id = "bomba" src="../images/bombear.png" alt="bomba">
-            <div id = "logo">Campo Minado</div>   
-        </div>
+    <body onload="defineTheme()">
+        <header>
+            <div>
+                <img class="bomb" src="../images/bombear.png" alt="bomba" />
+                <span class="logo">Campo Minado</span>
+            </div> 
+            <div class="div-change-theme">
+                <div class="btn" onclick="changeTheme()">
+                    <img class="change-theme" src="../images/theme_light_dark_icon.svg" alt="Trocar o Theme" />
+                </div>
+            </div>  
+        </header>
 
-        <div class = "login">
+        <section class = "login">
             <form class = "loginForm"> 
                 <label> Usuário </label>
                 <input type="email"  id = "email_password">
@@ -25,8 +33,11 @@
                 <div class = "btnLgn"><a href = "game.html">Entrar</a></div> 
                 <div class = "btnLgn"><a href = "cadastro.html">Registrar</a></div> 
             </form>
-        </div> 
-
+        </section> 
+        
+        <footer>
+            <p>SI401 @ 2021</p>
+        </footer>
        
     </body>
 </html> 

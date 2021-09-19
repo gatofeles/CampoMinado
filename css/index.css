@@ -30,7 +30,7 @@ body{
 .navbar{
     display: flex;
     background-color: #17252a;
-    flex-direction:row;
+    flex-direction:column;
     padding: 2%;
     border-radius: 5px;
     color:#ffffff;
@@ -133,6 +133,7 @@ body{
     border-radius: 5px;
     font-size: 10px;
     font-family: 'Press Start 2P', cursive;
+    
 }
 
 #bomba{

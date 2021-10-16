@@ -58,6 +58,22 @@ function gerarCampo(){
     }
 
 }
+function temporizador(){
+    timer=600;
+    var aux = document.getElementById(classica);
+    if(classica=checked){
+        return function(){
+            var minutos, segundos;
+            minutos=Math.floor(timer/60);
+            segundos = timer%60 <= 9 ? '0' + timer%60 : timer%60;
+            document.getElementById('partida').innerHTML = minutos + ':' + segundos;
+            timer--;
+          
+        }
+
+    }
+ 
+}
 
 function revelarCampos(){
    

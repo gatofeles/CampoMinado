@@ -31,6 +31,16 @@
                 <input type="number"  id = "colunas" name="colunas">
                 <label for="bomb">Bombas</label>
                 <input type="number"  id = "bomb" name="bomb">
+                
+                <div class= "partida">
+                    <p>Tipo de Partida</p>
+                    <label for= "classica">Clássica</label>
+                    <input type="checkbox" id="classica" name="Classica" onclick="checked" onclick="temporizador()" >
+
+                    <label for= "rivotril">Rivotril</label>
+                    <input type="checkbox" id="rivotril" name="rivotril"  >
+
+                </div>
             </form>
             <div class="btn" id="gerarCampo" onclick="gerarCampo()">Gerar Campo</div>
             <table id = "table">

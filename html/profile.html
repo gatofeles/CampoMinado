@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/index.css">
         <script src = "../js/header.js"></script>
-        <script src = "../js/gerarCampo.js"></script>
         <title>Campo Minado</title>
     </head>
     <body onload="defineTheme()">
@@ -20,25 +19,37 @@
                     <img class="change-theme" src="../images/theme_light_dark_icon.svg" alt="Trocar o Theme" />
                 </div>
             </div>  
+            <div class="dropdown">
+                <div class="dropbtn">Menu</div>
+                <div class="dropdown-content">
+                    <a href="game.html">Jogo</a>
+                    <a href="global_ranking.html">Global Ranking</a>
+                    <a href="login.html">Logout</a>
+                </div>
+            </div>   
         </header>
 
-        <section class = "login">
+        <section>
             <h1>&nbsp;</h1>
-            <form class = "loginForm"> 
-                <label> Usuário </label>
-                <input type="email"  class = "email_password">
-
+            <form class = "cadastroForm"> 
+                <label> Nome </label>
+                <input type="name"  class = "email_password">
+                
+                <label> Email    </label>
+                <input type="email" class = "email_password"> 
+                <label> Telefone </label>
+                <input type="telefone" class = "email_password"> 
+                
                 <label> Senha </label>
-                <input type="password"  class = "email_password">
-
-                <div class = "btnLgn"><a href = "game.html">Entrar</a></div> 
-                <div class = "btnLgn"><a href = "cadastro.html">Registrar</a></div> 
+                <input type="password" class = "email_password"> 
+                <div class = "btnLgn"><a href = "game.html">Atualizar</a></div> 
             </form>
         </section> 
         
         <footer>
             <p>SI401 @ 2021</p>
         </footer>
+
        
     </body>
 </html> 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/global-ranking.css">
+        <script src = "../js/nav.js"></script>
+        <script src = "../js/header.js"></script>
+        <script src = "../js/global-ranking.js"></script>
+        <title>Campo Minado - Ranking Global</title>
+    </head>
+    <body onload="loadRankingPage()">
+        <header>
+            <div>
+                <img class="bomb" src="../images/bombear.png" alt="bomba" />
+                <span class="logo">Campo Minado</span>
+            </div> 
+            <div class="div-change-theme">
+                <div class="btn" onclick="changeTheme()">
+                    <img class="change-theme" src="../images/theme_light_dark_icon.svg" alt="Trocar o Theme" />
+                </div>
+            </div>  
+            <div class="dropdown">
+                <div class="dropbtn">Menu</div>
+                <div class="dropdown-content">
+                    <a href="profile.html">Dados do Usuário</a>
+                    <a href="game.html">Jogo</a>
+                    <a href="login.html">Logout</a>
+                </div>
+            </div>   
+        </header>
+
+        <section>
+            <h1>Ranking Global</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Dimensões do Campo</th>
+                        <th>Tempo de Jogo (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking">
+                    <!-- Tabela renderizada dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+        
+        <footer>
+            <p>SI401 @ 2021</p>
+        </footer>
+    </body>
+</html> 

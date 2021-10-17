@@ -1,0 +1,36 @@
+article {
+	display: flex;
+	flex-direction: column;
+}
+
+body.light article h1 {
+    color: #03254c;
+}
+
+body.dark article h1 {
+    color: #17252a;
+}
+
+body.light article table {
+    color: #03254c;
+}
+
+body.dark article table {
+    color: #17252a;
+}
+
+body.light article table tbody tr:nth-child(odd) {
+	background-color: #FFFFFF;
+}
+
+body.light article table tbody tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+body.dark article table tbody tr:nth-child(odd) {
+	background-color: #def2f1;
+}
+
+body.dark article table tbody tr:nth-child(even) {
+	background-color: #3AAFA9;
+}

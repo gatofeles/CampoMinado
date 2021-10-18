@@ -1,7 +1,8 @@
 start = 0;
 
-function timer(){
+export function timer(){
     start++;
-    document.getElementById("clock").innerHTML=start;
+    document.getElementById("gameStatus").innerHTML=start;
   	setTimeout("timer()", 1000);
 }
+

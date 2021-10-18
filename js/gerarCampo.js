@@ -5,6 +5,8 @@ let gameBeat = false;
 let matrizCampo = [];
 let globalBomb = 0;
 let globalNumberOfFields = 0;
+let start = 0;
+let maxtime = 0;
 
 async function cheating(){
     if(gameBeat){
@@ -69,7 +71,6 @@ async function  makeFieldsVisible(){
             else if(matrizCampo[i][j].className.toString() != "areaRevel" && matrizCampo[i][j].firstChild.className.toString() == "bombaHide"){
                 let bomb = matrizCampo[i][j].firstChild;
                 bomb.className = "bombaArea";
-               // matrizCampo[i][j].firstChild.className == "bombaArea";
             }
         }
     }
@@ -204,8 +205,6 @@ function revelarCampos(){
        alert("Você perdeu, reinicie o jogo.")
    }
 
-   
-    
 }
 
 function revelarRecursivo(matriz, index){
@@ -258,6 +257,15 @@ function startGame(){
         gameStarted = true;
         document.getElementById("gameStatus").innerHTML = "Jogo em andamento";
         alert("Jogo Iniciado!");
+        if(document.getElementById("model").value == "classic"){
+            
+            classicTimer();
+        }
+        else{
+            maxtime = Math.ceil(globalNumberOfFields*2*0.2)+(globalBomb);
+            rivotrilTimer();
+        }
+        
     }
 
     else if(!gameOver && !gameBeat){
@@ -306,6 +314,36 @@ function checkIfWin(){
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
+function classicTimer(){
+    if(gameOver || gameBeat){
+        return;
+    }
+    else{
+        start++;
+        document.getElementById("gameStatus").innerHTML="Tempo de jogo: "+start+" segundos";
+  	    setTimeout("classicTimer()", 1000);
+    }
+    
+}
+
+function rivotrilTimer(){
+    if(maxtime == 0){
+        alert("Tempo esgotado! Game over!");
+        gameOver = true;
+    }
+    else if(gameBeat){
+        return;
+    }
+    else{
+        maxtime--;
+        document.getElementById("gameStatus").innerHTML="Você tem: "+maxtime+" segundos para terminar o jogo!";
+  	    setTimeout("rivotrilTimer()", 1000);
+    }
+}
+
+
 
 function loadGamePage() {
     defineTheme(); 

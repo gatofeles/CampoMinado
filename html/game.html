@@ -32,7 +32,7 @@
         </header>
 
         <section class="campo">
-            <h1>&nbsp;</h1>
+            <h1 id = "gameStatus" class = gameStatus>Jogo não iniciado</h1>
             <form class = "options" action="dim">
                 <label for="linhas">Linhas</label>
                 <input type="number"  id = "linhas" name="linhas">
@@ -50,8 +50,14 @@
             <table id = "table">
                 <!-- Tabela renderizada dinamicamente -->
             </table>   
-            <div id = "notReady" class = "btn notReady">
+            <div id = "notReady" class = "btn notReady" onclick = "startGame()">
                 Iniciar Jogo
+            </div>
+            <div class = "btn" onclick = "restartGame()">
+                Recarregar Jogo
+            </div>
+            <div class = "btn" onclick = "cheating()">
+                Trapaça
             </div>
         </section>
         

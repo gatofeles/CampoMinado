@@ -193,6 +193,41 @@ body.light #notReady.notReady:hover {
     color: #03254c !important;
 }
 
+
+
+body.dark #Ready.Ready{
+    background-color: rgb(230, 36, 36);
+    color: #eeeb28 ;
+    opacity: 100%;
+    cursor: default;
+    
+}
+
+body.light #Ready.Ready{
+    background-color: #03254c;
+    box-shadow: 1px 2px 2px #e0fbfc;
+    color: #e0fbfc ;
+    opacity: 100%;
+    cursor: default;
+    
+}
+
+body.dark #Ready.Ready{
+    background-color: rgb(230, 36, 36);
+    box-shadow: 1px 2px 2px #000000;
+}
+
+body.dark #Ready.Ready:hover {
+    background-color: #000000;
+    color: #FFFFFF !important;
+}
+
+body.light #Ready.Ready:hover {
+    background-color: #e0fbfc;
+    box-shadow: 1px 2px 2px #03254c;
+    color: #03254c !important;
+}
+
 .options{
     margin: auto;
     display: flex;
@@ -688,4 +723,20 @@ body.light footer p {
 footer p {
     font-size: 10px;
     font-family: 'Anton', sans-serif;
+}
+
+body.dark .gameStatus{
+    background-color: #03254c;
+    padding: 10px;
+    border-radius: 2px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+body.light .gameStatus{
+    background-color: #8fbaeb;
+    padding: 10px;
+    border-radius: 2px;
+    color: #000;
+    border-radius: 5px;
 }

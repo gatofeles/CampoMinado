@@ -27,7 +27,7 @@ create table partidas (
 create view top10 as
  select * from partidas
  where resultado = 'V'
- order by dimensaoCampo desc, tempoPartida desc
+ order by dimensaoCampo desc, tempoPartida asc
     limit 10;
 
 DELIMITER $$

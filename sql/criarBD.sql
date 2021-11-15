@@ -34,9 +34,11 @@ create view top10 as
 DELIMITER $$
 CREATE PROCEDURE mostrarHistorico(IN idUser INT)
 BEGIN
-    select * from partidas
+    select u.username, p.dimensaoCampo, p.numeroBombas, p.modoDeJogo, p.tempoPartida, p.resultado, p.dataDoJogo from partidas p inner join usuarios u
+    on p.idUsuario = u.id
     where idUsuario = idUser
-    order by dataDoJogo;
+    order by dataDoJogo
+    limit 20;
 END $$
 DELIMITER ;
 

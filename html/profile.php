@@ -1,4 +1,11 @@
 <?php
+    if(isset($_POST["logout"])){
+        unset($_COOKIE["userId"]);
+        setcookie("userId", "", time()-(60*60*24*7));
+        unset($_COOKIE["username"]);
+        setcookie("username", "", time()-(60*60*24*7));
+    }
+    
     if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
         header("Location: login.php");
     }

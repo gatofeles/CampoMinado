@@ -1,4 +1,11 @@
 <?php
+    if(isset($_POST["logout"])){
+        unset($_COOKIE["userId"]);
+        setcookie("userId", "", time()-(60*60*24*7));
+        unset($_COOKIE["username"]);
+        setcookie("username", "", time()-(60*60*24*7));
+    }
+
     if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
         header("Location: login.php");
     }
@@ -33,7 +40,7 @@
                 <div class="dropbtn">Menu</div>
                 <form  class="dropdown-content" method = "POST">
                     <a href="profile.php">Dados do Usuário</a>
-                    <a href="global_ranking.php">Global Ranking</a>
+                    <a href="game.php">Jogo</a>
                     <input type ="submit" name = "logout" value = "Logout">
                 </form >
             </div>   
@@ -65,7 +72,7 @@
                                 echo "<td>" . $row["numeroBombas"] . "</td>";
                                 echo "<td>" . $row["tempoPartida"] . "</td>";
                                 echo "<td>" . $row["dataDoJogo"] . "</td>";
-                                echo "<td>" . (($row["modoDeJogo"] = "R")? "Rivotril":"Clássico"). "</td>";
+                                echo "<td>" . (($row["modoDeJogo"] == "R")? "Rivotril":"Clássico"). "</td>";
                                 echo "</tr>";
                             }
                         }

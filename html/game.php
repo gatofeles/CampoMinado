@@ -4,16 +4,11 @@
         setcookie("userId", "", time()-(60*60*24*7));
         unset($_COOKIE["username"]);
         setcookie("username", "", time()-(60*60*24*7));
-        echo "<script>alert('Erro ao realizar login! Usuário ou senha incorretos')</script>";
-        echo "1";
     }
-   
+
     if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
         header("Location: login.php");
     }
-    echo $_COOKIE["username"];
-    echo $_COOKIE["userId"];
-
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +21,6 @@
         <link rel="stylesheet" href="../css/game.css">
         <script src = "../js/header.js"></script>
         <script src = "../js/gerarCampo.js"></script>
-        <script>
-            if( $.cookie('username') == null ) { 
-                alert("Não tem biscoito!");
-                window.location.replace('login.php');
-            }
-        </script>
         <title>Campo Minado</title>
     </head>
     <body onload="loadGamePage()">
@@ -100,6 +89,25 @@
                     </tr>
                 </thead>
                 <tbody id="ranking">
+                <?php 
+                        require_once 'DataSource.php';
+                        $conn = new DataSource();
+                        $history = $conn->showUserHistory($_COOKIE["userId"]);
+                        if($history->num_rows > 0) {
+                            while($row = $history->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["username"] . "</td>";
+                                echo "<td>" . $row["dimensaoCampo"] . "</td>";
+                                echo "<td>" . $row["numeroBombas"] . "</td>";
+                                echo "<td>" . (($row["modoDeJogo"] == "R")? "Rivotril":"Clássico"). "</td>";
+                                echo "<td>" . $row["tempoPartida"] . "</td>";
+                                echo "<td>" . (($row["resultado"] == "P")? "Derrota":"Vitória") . "</td>";
+                                echo "<td>" . $row["dataDoJogo"] . "</td>";
+                                
+                                echo "</tr>";
+                            }
+                        }
+                    ?>
                     <!-- Tabela renderizada dinamicamente -->
                 </tbody>
             </table>

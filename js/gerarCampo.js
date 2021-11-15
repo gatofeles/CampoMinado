@@ -7,6 +7,8 @@ let globalBomb = 0;
 let globalNumberOfFields = 0;
 let start = 0;
 let maxtime = 0;
+let gameMode = "";
+let xhttp; 
 
 async function cheating(){
     if(gameBeat){
@@ -254,6 +256,7 @@ function revelarRecursivo(matriz, index){
 
 function startGame(){
     if(gameReady && !gameOver && !gameBeat){
+        gameMode = document.getElementById("model").value;
         gameStarted = true;
         document.getElementById("gameStatus").innerHTML = "Jogo em andamento";
         alert("Jogo Iniciado!");
@@ -318,8 +321,11 @@ function sleep(ms) {
 
 function classicTimer(){
     if(gameOver || gameBeat){
+        let resultado = gameBeat?"V":"P";
+        sendGameResultToDatabase(resultado);
         return;
     }
+
     else{
         start++;
         document.getElementById("gameStatus").innerHTML="Tempo de jogo: "+start+" segundos";
@@ -332,23 +338,55 @@ function rivotrilTimer(){
     if(maxtime == 0){
         alert("Tempo esgotado! Game over!");
         gameOver = true;
+        sendGameResultToDatabase("P");
     }
     else if(gameBeat || gameOver){
+        let resultado = gameBeat?"V":"P";
+        sendGameResultToDatabase(resultado);
         return;
     }
     else{
         maxtime--;
+        start++;
         document.getElementById("gameStatus").innerHTML="Você tem: "+maxtime+" segundos para terminar o jogo!";
   	    setTimeout("rivotrilTimer()", 1000);
     }
 }
 
-
-
-
 function loadGamePage() {
     defineTheme(); 
     //loadHist();
+}
+
+function sendGameResultToDatabase(result){
+    xhttp = new XMLHttpRequest();
+    if (!xhttp) {  
+        return false;
+    }
+
+    xhttp.onreadystatechange = mostraResposta;
+    xhttp.open("POST", "ajax.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("gameResult="+encodeURIComponent(result)+"&gameMode="+encodeURIComponent(gameMode)+"&gameTime="+encodeURIComponent(start)
+        +"&dimensao="+encodeURIComponent(globalNumberOfFields)+"&bombas="+encodeURIComponent(globalBomb));
+
+}
+
+function mostraResposta() {
+    try {
+        if (xhttp.readyState === XMLHttpRequest.DONE) {
+            if (xhttp.status === 200) {
+                console.log(xhttp.responseText);
+            }
+            else {
+            alert('Um problema ocorreu.');
+            }
+        }
+    }
+    catch (e) {
+    console.log(e);
+    alert("Ocorreu uma exceção: " + e.description);
+    }
 }
 
 // function loadHist(){

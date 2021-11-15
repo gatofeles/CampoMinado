@@ -19,6 +19,12 @@ class DataSource{
         return $top10;
     }
     
+    public function showUserHistory($userId){
+        $query = "CALL mostrarHistorico(".$userId.")";
+        $history = $this->connection->query($query);
+        return $history;
+    }
+
     public function checkIfUserExists($post){
         $query = $this->connection->query("select * from usuarios where username = '".$post["username"]."'");
         if($query->num_rows > 0){
@@ -50,6 +56,15 @@ class DataSource{
         $id = $this->connection->query("select id from usuarios where username = '".$username."'");
         $stringId = mysqli_fetch_row($id);
         return $stringId[0];
+    }
+
+    public function addPartida($userId, $post){
+
+        date_default_timezone_set('America/Sao_Paulo'); 
+        $date = date('Y-m-d H:i:s', time());
+        $modo = ($post["gameMode"] == "rivotril")?"R":"C";
+        $query = "insert into partidas (idUsuario, dimensaoCampo, numeroBombas,tempoPartida, dataDoJogo, modoDeJogo, resultado) values (".$userId.",".$post["dimensao"].",".$post["bombas"].",".$post["gameTime"].", '".$date."', '".$modo."', '".$post["gameResult"]."')";
+        return $this->connection->query($query);
     }
 
 

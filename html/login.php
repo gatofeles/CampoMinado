@@ -1,3 +1,23 @@
+<?php 
+    require_once 'DataSource.php';
+    $conn = new DataSource();
+    if(count($_POST) > 0){
+        $result = $conn->DoLogin($_POST);
+        echo "<script>result".$result."';</script>";
+        if($result){
+            $userId = $conn->getUserId($_POST["username"]);
+            setcookie("username", $_POST["username"]);
+            setcookie("userId", $userId);
+            echo "<script>window.location.href = 'game.php';</script>";
+            
+        }
+        else{
+            echo "<script>alert('Erro ao realizar login! Usuário ou senha incorretos');</script>";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,15 +44,13 @@
 
         <section class = "login">
             <h1>&nbsp;</h1>
-            <form class = "loginForm"> 
+            <form class = "loginForm" method = "POST"> 
                 <label> Usuário </label>
-                <input type="email"  class = "email_password">
-
+                <input type="text"  class = "email_password" required="required" name = "username">
                 <label> Senha </label>
-                <input type="password"  class = "email_password">
-
-                <div class = "btnLgn"><a href = "game.html">Entrar</a></div> 
-                <div class = "btnLgn"><a href = "cadastro.html">Registrar</a></div> 
+                <input type="password"  class = "email_password" required="required" name = "password">
+                <input class = "btnLgn" type="submit" value = "Login">
+                <div class = "btnLgn"><a href = "cadastro.php">Registrar</a></div> 
             </form>
         </section> 
         

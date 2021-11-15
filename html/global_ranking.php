@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
+        header("Location: login.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,11 +31,11 @@
             </div>  
             <div class="dropdown">
                 <div class="dropbtn">Menu</div>
-                <div class="dropdown-content">
-                    <a href="profile.html">Dados do Usuário</a>
-                    <a href="game.html">Jogo</a>
-                    <a href="login.html">Logout</a>
-                </div>
+                <form  class="dropdown-content" method = "POST">
+                    <a href="profile.php">Dados do Usuário</a>
+                    <a href="global_ranking.php">Global Ranking</a>
+                    <input type ="submit" name = "logout" value = "Logout">
+                </form >
             </div>   
         </header>
 
@@ -38,11 +45,31 @@
                 <thead>
                     <tr>
                         <th>Username</th>
-                        <th>Dimensões do Campo</th>
+                        <th>Dimensão do Campo (Células)</th>
+                        <th>Número de Bombas</th>
                         <th>Tempo de Jogo (s)</th>
+                        <th>Data e Hora do Jogo</th>
+                        <th>Dificuldade</th>
                     </tr>
                 </thead>
                 <tbody id="ranking">
+                    <?php 
+                        require_once 'DataSource.php';
+                        $conn = new DataSource();
+                        $top10 = $conn->showTop10();
+                        if($top10->num_rows > 0) {
+                            while($row = $top10->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["username"] . "</td>";
+                                echo "<td>" . $row["dimensaoCampo"] . "</td>";
+                                echo "<td>" . $row["numeroBombas"] . "</td>";
+                                echo "<td>" . $row["tempoPartida"] . "</td>";
+                                echo "<td>" . $row["dataDoJogo"] . "</td>";
+                                echo "<td>" . (($row["modoDeJogo"] = "R")? "Rivotril":"Clássico"). "</td>";
+                                echo "</tr>";
+                            }
+                        }
+                    ?>
                     <!-- Tabela renderizada dinamicamente -->
                 </tbody>
             </table>

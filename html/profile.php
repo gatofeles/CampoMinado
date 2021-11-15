@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
+        header("Location: login.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,26 +26,30 @@
                     <img class="change-theme" src="../images/theme_light_dark_icon.svg" alt="Trocar o Theme" />
                 </div>
             </div>  
+            <div class="dropdown">
+                <div class="dropbtn">Menu</div>
+                <form  class="dropdown-content" method = "POST">
+                    <a href="game.php">Jogo</a>
+                    <a href="global_ranking.php">Global Ranking</a>
+                    <input type ="submit" name = "logout" value = "Logout">
+                </form >
+            </div>   
         </header>
 
-        <section class = "registroForm">
-            <h1>Registro</h1>
+        <section>
+            <h1>&nbsp;</h1>
             <form class = "cadastroForm"> 
                 <label> Nome </label>
-                <input type="text"  class = "email_password">
-                <label> Data Nascimento</label>
-                <input type="text"  class = "email_password">
+                <input type="name"  class = "email_password">
+                
                 <label> Email    </label>
                 <input type="email" class = "email_password"> 
                 <label> Telefone </label>
-                <input type="text" class = "email_password"> 
-                <label> CPF </label>
-                <input type="text" class = "email_password"> 
-                <label> Username </label>
-                <input type="text" class = "email_password"> 
+                <input type="telefone" class = "email_password"> 
+                
                 <label> Senha </label>
                 <input type="password" class = "email_password"> 
-                <div class = "btnLgn"><a href = "login.html">Cadastrar</a></div> 
+                <div class = "btnLgn"><a href = "game.php">Atualizar</a></div> 
             </form>
         </section> 
         

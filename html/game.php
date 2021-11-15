@@ -1,3 +1,21 @@
+<?php
+    if(isset($_POST["logout"])){
+        unset($_COOKIE["userId"]);
+        setcookie("userId", "", time()-(60*60*24*7));
+        unset($_COOKIE["username"]);
+        setcookie("username", "", time()-(60*60*24*7));
+        echo "<script>alert('Erro ao realizar login! Usuário ou senha incorretos')</script>";
+        echo "1";
+    }
+   
+    if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
+        header("Location: login.php");
+    }
+    echo $_COOKIE["username"];
+    echo $_COOKIE["userId"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +26,12 @@
         <link rel="stylesheet" href="../css/game.css">
         <script src = "../js/header.js"></script>
         <script src = "../js/gerarCampo.js"></script>
+        <script>
+            if( $.cookie('username') == null ) { 
+                alert("Não tem biscoito!");
+                window.location.replace('login.php');
+            }
+        </script>
         <title>Campo Minado</title>
     </head>
     <body onload="loadGamePage()">
@@ -23,11 +47,11 @@
             </div>  
             <div class="dropdown">
                 <div class="dropbtn">Menu</div>
-                <div class="dropdown-content">
-                    <a href="profile.html">Dados do Usuário</a>
-                    <a href="global_ranking.html">Global Ranking</a>
-                    <a href="login.html">Logout</a>
-                </div>
+                <form  class="dropdown-content" method = "POST">
+                    <a href="profile.php">Dados do Usuário</a>
+                    <a href="global_ranking.php">Global Ranking</a>
+                    <input type ="submit" name = "logout" value = "Logout">
+                </form >
             </div>   
         </header>
 

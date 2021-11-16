@@ -46,6 +46,7 @@ insert into usuarios (username, senha, dataNascimento, nome, email, telefone, cp
 insert into usuarios (username, senha, dataNascimento, nome, email, telefone, cpf) values ('gabi', '123', '1900-12-31','gabi', 'gabi@gmail.com', '123456789', '123456789');
 insert into usuarios (username, senha, dataNascimento, nome, email, telefone, cpf) values ('nicolas', '123','1900-12-31', 'nicolas', 'nicolas@gmail.com', '123456789', '123456789');
 insert into usuarios (username, senha, dataNascimento, nome, email, telefone, cpf) values ('jose', '123','1900-12-31','jose', 'jose@gmail.com', '123456789', '123456789');
+insert into usuarios (username, senha, dataNascimento, nome, email, telefone, cpf) values ('rodrigo', '123','1990-01-18','rodrigo', 'rodrigo@gmail.com', '123456789', '123456789');
 
 insert into partidas (idUsuario, dimensaoCampo, numeroBombas,tempoPartida, dataDoJogo, modoDeJogo, resultado) values (1, 20, 5, 100, '2021-12-31 10:30:59', 'R', 'V');
 insert into partidas (idUsuario, dimensaoCampo, numeroBombas,tempoPartida, dataDoJogo, modoDeJogo, resultado) values (1, 35, 15, 200, '2021-12-31 11:30:59', 'R', 'P');

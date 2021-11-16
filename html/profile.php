@@ -12,6 +12,21 @@
 
 ?>
 
+<?php 
+    require_once 'DataSource.php';
+    $conn = new DataSource();
+    if(count($_POST) > 0){
+        $result = $conn->UpdateUser($_POST);
+        if($result){
+            echo "<script>alert('Usuário alterado com sucesso!');</script>";
+        }
+        else{
+            echo "<script>alert('Erro ao alterar usuário!');</script>";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,18 +60,22 @@
 
         <section>
             <h1>&nbsp;</h1>
-            <form class = "cadastroForm"> 
-                <label> Nome </label>
-                <input type="name"  class = "email_password">
-                
-                <label> Email    </label>
-                <input type="email" class = "email_password"> 
-                <label> Telefone </label>
-                <input type="telefone" class = "email_password"> 
-                
-                <label> Senha </label>
-                <input type="password" class = "email_password"> 
-                <div class = "btnLgn"><a href = "game.php">Atualizar</a></div> 
+            <form class = "cadastroForm" method = "POST"> 
+            <?php 
+                        require_once 'DataSource.php';
+                        $conn = new DataSource();
+                        $user = $conn->getUser($_COOKIE["userId"]);
+                        echo "<input type=\"hidden\"  class = \"register\" name = \"id\" value=\"" . $_COOKIE["userId"] . "\" />";
+                        echo "<label> Nome </label>";
+                        echo "<input type=\"text\"  class = \"register\" name = \"name\" value=\"" . $user[4] . "\" />";
+                        echo "<label> Email    </label>";
+                        echo "<input type=\"email\" name=\"email\" class = \"register\" value=\"" . $user[5] . "\" />";
+                        echo "<label> Telefone </label>";
+                        echo "<input type=\"text\" maxlength=\"15\" class = \"register\" name = \"phone\" pattern=\"\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$\" value=\"" . $user[6] . "\" />";
+                        echo "<label> Senha </label>";
+                        echo "<input type=\"password\" class = \"register\" name=\"password\" value=\"" . $user[2]. "\" />";
+                    ?>
+                <input class = "btnLgn" type = "submit" value = "Atualizar">
             </form>
         </section> 
         

@@ -1,6 +1,6 @@
 function loadRankingPage() {
 	defineTheme(); 
-	loadGlobalRanking();
+	//loadGlobalRanking();
 }
 
 // function loadGlobalRanking(){

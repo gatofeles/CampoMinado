@@ -108,7 +108,6 @@
                             }
                         }
                     ?>
-                    <!-- Tabela renderizada dinamicamente -->
                 </tbody>
             </table>
         </article>

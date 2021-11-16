@@ -42,6 +42,11 @@ class DataSource{
         }
     }
 
+    public function UpdateUser($post){
+        $query =  "update usuarios set senha = '".$post["password"]."', nome = '".$post["name"]."', email = '".$post["email"]."', telefone = '".$post["phone"]."' where id = ".$post["id"]."";
+        return $this->connection->query($query);
+    }
+
     public function DoLogin($post){
         $query = $this->connection->query("select * from usuarios where username = '".$post["username"]."' and senha = '".$post["password"]."'");
         if($query->num_rows > 0){
@@ -56,6 +61,11 @@ class DataSource{
         $id = $this->connection->query("select id from usuarios where username = '".$username."'");
         $stringId = mysqli_fetch_row($id);
         return $stringId[0];
+    }
+
+    public function getUser($id){
+        $user = $this->connection->query("select * from usuarios where id = ".$id."");
+        return mysqli_fetch_row($user);
     }
 
     public function addPartida($userId, $post){

@@ -46,7 +46,7 @@
                 <label> Email    </label>
                 <input type="email" class = "register" required="required" name = "email"> 
                 <label> Telefone </label>
-                <input type="text" required="required" required="required" maxlength="15" class = "register" name = "phone" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value = "(00)00000-0000"> 
+                <input type="text" class = "register" required="required" maxlength="15" class = "register" name = "phone" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value = "(00)00000-0000"> 
                 <label> CPF </label>
                 <input type="text" class = "register" required="required" maxlength="11" name = "cpf"> 
                 <label> Username </label>

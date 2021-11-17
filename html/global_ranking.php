@@ -1,15 +1,18 @@
 <?php
+    session_start();
+
     if(isset($_POST["logout"])){
         unset($_COOKIE["userId"]);
         setcookie("userId", "", time()-(60*60*24*7));
         unset($_COOKIE["username"]);
         setcookie("username", "", time()-(60*60*24*7));
+        unset($_SESSION["start"]);
+        session_destroy();
     }
-
-    if(!isset($_COOKIE["userId"])  || !isset($_COOKIE["username"])){
+    
+    if(!isset($_SESSION["start"])){
         header("Location: login.php");
     }
-
 ?>
 
 <!DOCTYPE html>

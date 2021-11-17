@@ -3,12 +3,14 @@
     $conn = new DataSource();
     if(count($_POST) > 0){
         $result = $conn->DoLogin($_POST);
-        echo "<script>result".$result."';</script>";
+        echo $result;
         if($result){
             $userId = $conn->getUserId($_POST["username"]);
             setcookie("username", $_POST["username"]);
             setcookie("userId", $userId);
-            echo "<script>window.location.href = 'game.php';</script>";
+            session_start();
+            $_SESSION["start"] = true;
+            header("Location: game.php");
             
         }
         else{
